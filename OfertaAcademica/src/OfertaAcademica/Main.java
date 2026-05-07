@@ -1,13 +1,20 @@
 
 package OfertaAcademica;
 
+import java.io.IOException;
 import java.util.Scanner;
 
+
+//git fetch origin
+//git switch Papus
+//git merge origin/yopo --allow-unrelated-histories
+//git push
+
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException{//throws IOException
         Scanner sc = new Scanner(System.in);
         
-        // 1. Crear e instanciar
+        //1. Crear e instanciar
         AdmisionFacultativa adm1 = new AdmisionFacultativa();
         adm1.mostrar();
         
@@ -23,5 +30,8 @@ public class Main {
         
         // 4. Ejemplo de una acción específica
         adm2.anunciar();
+
+        Universidad U = new Universidad();
+        U.mostrar();
     }
 }
