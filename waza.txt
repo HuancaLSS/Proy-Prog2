@@ -1,0 +1,39 @@
+remote: Repository not found.
+fatal: repository 'https://github.com/HuancaLSS/Proy-Prog2.git~/' not found
+
+bonil@DESKTOP-19OVSVS MINGW64 ~/OneDrive/Desktop/u/121/Proy-prog2 (Papus)
+$ git remote add origin https://github.com/HuancaLSS/Proy-Prog2.git
+error: remote origin already exists.
+
+bonil@DESKTOP-19OVSVS MINGW64 ~/OneDrive/Desktop/u/121/Proy-prog2 (Papus)
+$ git remote set-url origin https://github.com/HuancaLSS/Proy-Prog2.git
+
+bonil@DESKTOP-19OVSVS MINGW64 ~/OneDrive/Desktop/u/121/Proy-prog2 (Papus)
+$ git add .
+
+bonil@DESKTOP-19OVSVS MINGW64 ~/OneDrive/Desktop/u/121/Proy-prog2 (Papus)
+$ git commit -m "aa"
+On branch Papus
+nothing to commit, working tree clean
+
+bonil@DESKTOP-19OVSVS MINGW64 ~/OneDrive/Desktop/u/121/Proy-prog2 (Papus)
+$ git push -u origin Papus
+info: please complete authentication in your browser...
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 218 bytes | 218.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To https://github.com/HuancaLSS/Proy-Prog2.git
+ * [new branch]      Papus -> Papus
+branch 'Papus' set up to track 'origin/Papus'.
+
+
+
+
+
+
+bonil@DESKTOP-19OVSVS MINGW64 ~/OneDrive/Desktop/u/121/Proy-prog2 (Papus)
+$
+
+bonil@DESKTOP-19OVSVS MINGW64 ~/OneDrive/Desktop/u/121/Proy-prog2 (Papus)
+$
