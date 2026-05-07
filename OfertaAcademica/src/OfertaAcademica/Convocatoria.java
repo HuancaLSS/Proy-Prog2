@@ -1,4 +1,4 @@
-package parte2;
+package OfertaAcademica;
 
 import java.util.Scanner;
 public class Convocatoria {
