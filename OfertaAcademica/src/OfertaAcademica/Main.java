@@ -7,24 +7,60 @@ import java.util.Scanner;
 //git switch Papus
 //git merge origin/yopo --allow-unrelated-histories
 //git push
+
 public class Main {
 
-    /*metodos */
-    public static void iniciar() {
+    public static void gestionarFacultad(Universidad U){
         boolean sw = true;
         Scanner sc = new Scanner(System.in);
         while (sw) {
             System.out.println(" ");
-            System.out.println("------------------------------------- ");
-            System.out.println("   1  : salir");
-            System.out.println("   2  : saludo");
+            System.out.println("////////ESTAS EN FACULTADES///////// ");
+            
+            System.out.println("   1  : saludo");
+            System.out.println("   2  : Listar Facultades");
+            System.out.println("   0  : salir");
+            
             System.out.println("------------------------------------- ");
             System.out.println(" ");
             System.out.print("elige una opcion: ");
             int x = sc.nextInt();
             switch (x) {
-                case 1:
+                case 0:
                     sw = false;
+                    break;
+                case 2:
+                    U.mostrar();
+                    break;
+                case 3:
+                    
+                    break;
+                default:
+                    break;
+            }
+        }
+    }
+    /*metodos */
+    public static void iniciar(Universidad U) {
+        boolean sw = true;
+        Scanner sc = new Scanner(System.in);
+        while (sw) {
+            System.out.println(" ");
+            System.out.println("------------------------------------- ");
+            
+            System.out.println("   1  : Facultades");
+            System.out.println("   2  : saludo");
+            System.out.println("   0  : salir");
+            System.out.println("------------------------------------- ");
+            System.out.println(" ");
+            System.out.print("elige una opcion: ");
+            int x = sc.nextInt();
+            switch (x) {
+                case 0:
+                    sw = false;
+                    break;
+                case 1:
+                    facultad(U);
                     break;
                 case 2:
                     System.out.println("holas ");
@@ -37,7 +73,8 @@ public class Main {
 
     public static void main(String[] args) throws IOException {//throws IOException
         Scanner sc = new Scanner(System.in);
-        iniciar();
+        Universidad U = new Universidad();
+        iniciar(U);
         /*
         //1. Crear e instanciar
         AdmisionFacultativa adm1 = new AdmisionFacultativa();
