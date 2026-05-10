@@ -7,21 +7,21 @@ import java.util.Scanner;
 //git switch Papus
 //git merge origin/yopo --allow-unrelated-histories
 //git push
-
 public class Main {
 
-    public static void gestionarFacultad(Universidad U){
+    public static void gestionarFacultad(Universidad U) {
         boolean sw = true;
         Scanner sc = new Scanner(System.in);
         while (sw) {
             System.out.println(" ");
             System.out.println("////////ESTAS EN FACULTADES///////// ");
-            
-            System.out.println("   1  : saludo");
-            System.out.println("   2  : Listar Facultades");
-            System.out.println("   0  : salir");
-            
-            System.out.println("------------------------------------- ");
+
+            System.out.println("   1  : Listar Facultades");
+            System.out.println("   2  : Agregar Facultad");
+            System.out.println("   3  : Quitar  Facultad");
+            System.out.println("   0  : volver");
+
+            System.out.println("//////////////////////////////////// ");
             System.out.println(" ");
             System.out.print("elige una opcion: ");
             int x = sc.nextInt();
@@ -29,17 +29,21 @@ public class Main {
                 case 0:
                     sw = false;
                     break;
-                case 2:
+                case 1:
                     U.mostrar();
                     break;
+                case 2:
+                    U.agregarFacultad();
+                    break;
                 case 3:
-                    
+                    U.quitarFacultad();
                     break;
                 default:
                     break;
             }
         }
     }
+
     /*metodos */
     public static void iniciar(Universidad U) {
         boolean sw = true;
@@ -47,9 +51,9 @@ public class Main {
         while (sw) {
             System.out.println(" ");
             System.out.println("------------------------------------- ");
-            
-            System.out.println("   1  : Facultades");
-            System.out.println("   2  : saludo");
+
+            System.out.println("   1  : Gestionar Facultades");
+            System.out.println("   2  : Gestionar Carreras");
             System.out.println("   0  : salir");
             System.out.println("------------------------------------- ");
             System.out.println(" ");
@@ -60,16 +64,44 @@ public class Main {
                     sw = false;
                     break;
                 case 1:
-                    facultad(U);
+                    gestionarFacultad(U);
                     break;
                 case 2:
-                    System.out.println("holas ");
+                    U.mostrar();
+                    U.gestionarCarrera();
+                    
                     break;
                 default:
                     break;
             }
         }
     }
+    
+    /*boolean sw = true;
+            while (sw) {
+                System.out.println(" ");
+
+                System.out.println("   1  : Listar Carreras");
+                System.out.println("   2  : Agregar Carrera");
+                System.out.println("   3  : Quitar Carrera");
+                System.out.println("   0  : salir");
+
+                System.out.println(" ");
+                System.out.print("elige una opcion: ");
+                int n = sc.nextInt();
+                switch (n) {
+                    case 0:
+                        sw = false;
+                        break;
+                    case 1:
+                        break;
+                    case 2:
+
+                        break;
+                    default:
+                        break;
+                }
+            }*/
 
     public static void main(String[] args) throws IOException {//throws IOException
         Scanner sc = new Scanner(System.in);
