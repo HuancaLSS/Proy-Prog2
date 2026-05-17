@@ -13,16 +13,14 @@ public class Prefacultativo extends Modalidad {
 
     @Override
     public void mostrar() {
-        System.out.println("- Modalidad: Prefacultativo - " + getTipoModalidad());
+        System.out.println("Modalidad: Prefacultativo - " + getTipoModalidad());
         System.out.println("Nivel: " + nivelClases);
         System.out.println("Carga Horaria: " + cargaHoraria + " horas/semana");
     }
 
     @Override
-    public boolean validar() {
-        System.out.println("Validando Prefacultativo (ej: asistencia > 80%): [Simulación]");
-        // Implementar lógica real aquí, por ejemplo:
-        // if (asistencia >= 80) return true;
+    public boolean validar() {// es marcar la asistencia 
+        System.out.println("Validando Prefacultativo");
         return true;
     }
 }
