@@ -1,34 +1,49 @@
 package OfertaAcademica;
 
-import java.util.Scanner;
-
 public class AdmisionFacultativa {
-    private String telefono, direccion, correo;
-    private Convocatoria C; // Relación 1 a 1
 
-    public AdmisionFacultativa() {
-        this.telefono = "70000000";
-        this.direccion = "Av. Villazon";
-        this.correo = "admision@umsa.bo";
-        this.C = new Convocatoria();
+    private String telefono;
+    private String direccion;
+    private String correo;
+    private Convocatoria[] convocatorias;
+    private int nroConvocatorias;
+
+    public AdmisionFacultativa(String telefono, String direccion, String correo) {
+        this.telefono = telefono;
+        this.direccion = direccion;
+        this.correo = correo;
+        convocatorias = new Convocatoria[50];
+        nroConvocatorias = 0;
+    }
+
+    public void agregarConvocatoria(Convocatoria c) {
+        if (nroConvocatorias < convocatorias.length) {
+            convocatorias[nroConvocatorias] = c;
+            nroConvocatorias++;
+        } else {
+            System.out.println("no entra mas convocatorias ");
+        }
     }
 
     public void leer() {
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Datos Admision (tel, dir, mail):");
-        telefono = sc.next();
-        direccion = sc.next();
-        correo = sc.next();
-        C.leer(); // pa leer la convocatoria
+        System.out.println("Telefono: " + telefono);
+        System.out.println("Direccion: " + direccion);
+        System.out.println("Correo: " + correo);
     }
 
     public void mostrar() {
-        System.out.println(telefono + " " + direccion + " " + correo);
-        C.mostrar();
+        System.out.println("ADMISION FACULTATIVA");
+        System.out.println("Telefono: " + telefono);
+        System.out.println("Direccion: " + direccion);
+        System.out.println("Correo: " + correo);
+
+        System.out.println("Convocatorias registradas:");
+        for (int i = 0; i < nroConvocatorias; i++) {
+            convocatorias[i].mostrar();
+        }
     }
-    
+
     public void anunciar() {
-        System.out.print("Nueva Convocatoria en: " + direccion + " costo: ");
-        C.mostrarCosto(); // Aquí ya no debería darte error
-}
+        System.out.println("Se publicaron nuevas convocatorias.");
+    }
 }

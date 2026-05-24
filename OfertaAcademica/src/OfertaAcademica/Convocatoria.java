@@ -1,41 +1,54 @@
 package OfertaAcademica;
 
-import java.util.Scanner;
 public class Convocatoria {
 
-    private String nro, semestre, tipo, fechaIni, fechaFin, modalidad;
+    private String nro;
+    private String semestre;
+    private String tipo;
     private double costo;
+    private String fechaInicio;
+    private String fechaFin;
+    private String modalidad;
+    private Carrera carrera;
 
-    public Convocatoria() {
-        this.nro = "";
-        this.semestre = "";
-        this.tipo = "";
-        this.costo = 0.0;
-        this.fechaIni = "";
-        this.fechaFin = "";
-        this.modalidad = "";
+    public Convocatoria(String nro, String semestre, String tipo,double costo, String fechaInicio,String fechaFin, String modalidad,Carrera carrera) {
+        this.nro = nro;
+        this.semestre = semestre;
+        this.tipo = tipo;
+        this.costo = costo;
+        this.fechaInicio = fechaInicio;
+        this.fechaFin = fechaFin;
+        this.modalidad = modalidad;
+        this.carrera = carrera;
     }
 
     public void leer() {
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Datos Convocatoria:");
-        nro = sc.next();
-        semestre = sc.next();
-        tipo = sc.next();
-        costo = sc.nextDouble();
-        fechaIni = sc.next();
-        fechaFin = sc.next();
-        modalidad = sc.next();
+        System.out.println("Nro: " + nro);
+        System.out.println("Semestre: " + semestre);
+        System.out.println("Tipo: " + tipo);
     }
 
     public void mostrar() {
-        System.out.println(nro + " " + semestre + " " + tipo + " " + costo + " " + fechaIni + " " + fechaFin + " " + modalidad);
+        System.out.println("CONVOCATORIA");
+        System.out.println("Nro: " + nro);
+        System.out.println("Semestre: " + semestre);
+        System.out.println("Tipo: " + tipo);
+        System.out.println("Costo: " + costo);
+        System.out.println("Fecha inicio: " + fechaInicio);
+        System.out.println("Fecha fin: " + fechaFin);
+        System.out.println("Modalidad: " + modalidad);
+
+        if (carrera != null) {
+            System.out.println("Carrera asociada:");
+            carrera.mostrar();
+        }
     }
 
-    public double getCosto() {
-        return costo;
+    public void calcularDias() {
+        System.out.println("calculo de días.");
     }
+
     public void mostrarCosto() {
-    System.out.println(costo);
-}
+        System.out.println("Costo de convocatoria: " + costo);
+    }
 }
